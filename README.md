@@ -1,4 +1,4 @@
-# Lab 8 - Starter
+# Lab 8 - Starter: Yuang Lin
 1 Within a Github action that runs whenever code is pushed, because I only want to test my code each time I push my code. If I check my code manually before pushing, that will waste a lot of time. And if I test my code after all development is completed, that will be a huge risk since I don't know which part of my code has problems.\
 2 No.  Because if I only want to check a function, I don't need to use end-to-end testing, that's not practical. I may choose unit testing to just test that specific function.\
 3 No. Because if we want to test the "message feature" of a message application, we may need to test a lot of functions and their iteractions. In this case, unit testing is not practical, we may prefer to using end-to-end testing. (unit testing is better when we want to test some small and isolated parts of the code.)\
