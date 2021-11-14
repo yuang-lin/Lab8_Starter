@@ -1,7 +1,7 @@
 describe('Basic user flow for Website', () => {
   // First, visit the lab 8 website
   beforeAll(async () => {
-    await page.goto('http://127.0.0.1:5500/index.html');
+    await page.goto('https://cse110-f2021.github.io/Lab8_Website');
   });
 
   // Next, check to make sure that all 20 <product-item> elements have loaded
@@ -65,14 +65,14 @@ describe('Basic user flow for Website', () => {
   it('Checking number of items in cart on screen', async () => {
     console.log('Checking number of items in cart on screen...');
     const myProducts = await page.$$('product-item');
-    for (let i = 0; i < myProducts.length; i++) {
+    for (let i = 1; i < myProducts.length; i++) {
       const shadow = await myProducts[i].getProperty('shadowRoot');
-      const mybutton = await ShadowRoot.$('button');
+      const mybutton = await shadow.$('button');
       await mybutton.click();
     }
     const cartNumber = await page.$('#cart-count');
     const cartMoney = await cartNumber.getProperty('innerText');
-    expect(cartNumber['_remoteObject'].value).toBe('20');
+    expect(cartMoney['_remoteObject'].value).toBe('20');
     // TODO - Step 3
     // Query select all of the <product-item> elements, then for every single product element
     // get the shadowRoot and query select the button inside, and click on it.
